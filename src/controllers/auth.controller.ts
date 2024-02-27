@@ -1,22 +1,16 @@
 import {
-  GoogleAuthProvider,
   signInWithEmailAndPassword,
-  signInWithRedirect,
-  signInWithPopup,
-  
-  signInWithCredential,
   createUserWithEmailAndPassword,
   getAuth,
 } from "firebase/auth";
-import serviceAccount from "../../fir-authentication-137f9-firebase-adminsdk-rxl8m-a541e58d67.json";
+
 import admin from "firebase-admin";
 import { google } from "googleapis";
 import dotenv from "dotenv";
 import addNewToken from "../utils/token";
-import jwt from "jsonwebtoken"
+
 dotenv.config();
 import { initializeApp } from "firebase/app";
-import { ServiceAccount } from "@google-cloud/storage";
 import axios from "axios";
 type Request = {
   body: any;
@@ -60,23 +54,35 @@ const firebaseConfig = {
   measurementId: "G-X64TMX924G",
 };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
  admin.initializeApp({
   credential: admin.credential.cert(JSON.parse(JSON.stringify(firebaseAdminConfig))),
 }) ;
+
+/**
+ * @swagger
+ * /register:
+ *   get:
+ *     summary: Register a new user
+ *     description: Create a new user with email and password.
+ *     responses:
+ *       200:
+ *         description: A list of users.
+ *       500:
+ *         description: Internal server error.
+ */
 export const register = async (req: Request, res: any) => {
   try {
     const { email = "", password = "" } = req.body;
     const auth = getAuth();
     const user = await createUserWithEmailAndPassword(auth, email, password);
-    console.log("user details", user);
     return res.status(200).json({ data: user });
   } catch (error: any) {
     console.error("error occoured during registration", error);
 
     switch (error.code) {
       case "auth/email-already-in-use":
-        console.log(`Email address already in use.`);
+        console.error(`Email address already in use.`);
         return res.status(409).json({ error: "email already in use" });
       case "auth/invalid-email":
         return res.status(403).json({ error: "invalid email" });
@@ -97,7 +103,7 @@ export const register = async (req: Request, res: any) => {
 export const login = async (req: Request, res: any) => {
   try {
     const { email, password } = req.body;
-    const auth = getAuth(app);
+    const auth = getAuth();
     const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
