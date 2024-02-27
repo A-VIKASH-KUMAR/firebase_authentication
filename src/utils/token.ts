@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
-
+import dotenv from "dotenv"
+dotenv.config();
 interface UpdatedUser {
     uid?: string;
   }
@@ -9,8 +10,9 @@ interface UpdatedUser {
   };
 
 export default function (req: Request, res: any, updatedUser: any) {
+    
     let jwtSignValue: any = {
-      uid: updatedUser.uid
+      uid: updatedUser.user.uid
     };
   
     let accessToken = jwt.sign(jwtSignValue, process.env.JWT_SECRET_KEY!, {
@@ -20,7 +22,7 @@ export default function (req: Request, res: any, updatedUser: any) {
     let refreshToken = jwt.sign(jwtSignValue, process.env.JWT_SECRET_KEY!, {
       expiresIn: "24h",
     });
-    
+
     // Attach tokens to the response locals object for further use
     res.locals.access = accessToken;
     res.locals.refresh = refreshToken;
