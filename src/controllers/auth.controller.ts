@@ -45,7 +45,7 @@ const firebaseAdminConfig = {
 };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAUnTmv5xA-lIUw3Tn1SEMTiu9wq98FEOI",
+  apiKey: process.env.FIREBASE_APIKEY,
   authDomain: "fir-authentication-137f9.firebaseapp.com",
   projectId: "fir-authentication-137f9",
   storageBucket: "fir-authentication-137f9.appspot.com",
