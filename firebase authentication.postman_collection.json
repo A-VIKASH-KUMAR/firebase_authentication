@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "bc47a53a-869d-40be-8b9e-2343156d7146",
+		"name": "firebase authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31454101"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"vikashkma@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"vikashk@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1674"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68a-h4RfhIGauxJFtApHGT1CBu+zdN0\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Feb 2024 14:07:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"uid\": \"VmIiDHOUnsUX0N0ZiS73soboGfB2\",\n        \"email\": \"vikashk@gmail.com\",\n        \"emailVerified\": false,\n        \"isAnonymous\": false,\n        \"providerData\": [\n            {\n                \"providerId\": \"password\",\n                \"uid\": \"vikashk@gmail.com\",\n                \"displayName\": null,\n                \"email\": \"vikashk@gmail.com\",\n                \"phoneNumber\": null,\n                \"photoURL\": null\n            }\n        ],\n        \"stsTokenManager\": {\n            \"refreshToken\": \"AMf-vByQtc2_W4eTfg1zxIh4Og7aVK7UiqsSIEZMfUBojf7LhfWvluQHMjsgxdMFno09QPTvWay-FMHZwMZ6pKnRdihF9sf5yD0W_uu2l2wgkrpiCpdthLvaDh2OEqyxB_Dq2wj0c5lccmfGe_jjyQUX-t9KCZ884goNrev2_zKHuxR6-LeT7JDOzLuPfijgHpOgctXvfbvbMmjayGC3UHf2kxcot63Le1dGCDr2CnC80Th5yD9v30U\",\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImExODE4ZjQ0ODk0MjI1ZjQ2MWQyMmI1NjA4NDcyMDM3MTc2MGY1OWIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLWF1dGhlbnRpY2F0aW9uLTEzN2Y5IiwiYXVkIjoiZmlyLWF1dGhlbnRpY2F0aW9uLTEzN2Y5IiwiYXV0aF90aW1lIjoxNzA4OTU2NDI1LCJ1c2VyX2lkIjoiVm1JaURIT1Vuc1VYME4wWmlTNzNzb2JvR2ZCMiIsInN1YiI6IlZtSWlESE9VbnNVWDBOMFppUzczc29ib0dmQjIiLCJpYXQiOjE3MDg5NTY0MjUsImV4cCI6MTcwODk2MDAyNSwiZW1haWwiOiJ2aWthc2hrQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ2aWthc2hrQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.l7MxgilFvbEPXlxk7Cm2dWOHKHg19SVxprLtSnlqRx9sDwmmCY4XnceCewaZpaU6F10eV66-lSrNZ0Ddm-BECnO6VebwXSzsmK-4FE7Alt7K319NtKUIrG3Llc0Mt6vTsmrp2TOrNGojYrhKypeEN-F9ukV4o1aRnxiGVN0i9MHMDKyXfZ9DF4OnODfopCxA1_qfT4F4xMx4prBdHK9AaRhqxyrO4T-4tEJ13Rk3yPELlkDZyLni5wjL297LmLIHm3RWJ7QZjwv9RQrvrBe7zVLgv2k1dyHc5Jpnc7dOI9gKo7UNVtBnwMgTUQpNRLecdypei6y4Vf730X14HUG_KA\",\n            \"expirationTime\": 1708960026042\n        },\n        \"createdAt\": \"1708956425683\",\n        \"lastLoginAt\": \"1708956425683\",\n        \"apiKey\": \"AIzaSyAUnTmv5xA-lIUw3Tn1SEMTiu9wq98FEOI\",\n        \"appName\": \"[DEFAULT]\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"vikashk@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"vikashk@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1674"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68a-HCWfngW1AwWcDg4iTeNa4IfUMf4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Feb 2024 14:56:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"uid\": \"VmIiDHOUnsUX0N0ZiS73soboGfB2\",\n        \"email\": \"vikashk@gmail.com\",\n        \"emailVerified\": false,\n        \"isAnonymous\": false,\n        \"providerData\": [\n            {\n                \"providerId\": \"password\",\n                \"uid\": \"vikashk@gmail.com\",\n                \"displayName\": null,\n                \"email\": \"vikashk@gmail.com\",\n                \"phoneNumber\": null,\n                \"photoURL\": null\n            }\n        ],\n        \"stsTokenManager\": {\n            \"refreshToken\": \"AMf-vBwFs1hqkhrtxyl7SyozzpzBRvcd_SZH9-JHDyyFCb6wHEQk9iOBOvR4ZpqlZoHVldG8z0TLObsTPvUSfor_1hekqcupk31mlDkc6IA6qlCPjCO12sOwRgU2NXPuRCf2sudePYTmxBdIKTgRLq6oWX3izsOMXBDWkBGE8NV0iATlK_peuo9TngobT8uhDtopokMsBm3ADkw8ZfKPxZE1HTjUFaFwJaKlbBTfPA2-KrzrQ4HV0K0\",\n            \"accessToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImExODE4ZjQ0ODk0MjI1ZjQ2MWQyMmI1NjA4NDcyMDM3MTc2MGY1OWIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLWF1dGhlbnRpY2F0aW9uLTEzN2Y5IiwiYXVkIjoiZmlyLWF1dGhlbnRpY2F0aW9uLTEzN2Y5IiwiYXV0aF90aW1lIjoxNzA4OTU5MzgwLCJ1c2VyX2lkIjoiVm1JaURIT1Vuc1VYME4wWmlTNzNzb2JvR2ZCMiIsInN1YiI6IlZtSWlESE9VbnNVWDBOMFppUzczc29ib0dmQjIiLCJpYXQiOjE3MDg5NTkzODAsImV4cCI6MTcwODk2Mjk4MCwiZW1haWwiOiJ2aWthc2hrQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJ2aWthc2hrQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.UbD_Xj_5wKXJv2UamylF2tE4TUFm7HB6JeOzCyZHfKlNSdGHmc7URM6snr1esiw9rumoHp9WA5xEA7Y2qsiYAYp8Qjpxze-aA9RNlelmrW8IurdxjhbSoXwu4wWSsxGR242M8V7pYRRO3Au4QriFzZ11XZMpCfPjgdSR0TyRvZnRVSUp8UrFryk012aVtAj5_18I3709TqutqH8Fk01gdi3eSWyRaMNeoeIIvQRYHU_mJXgJm8yc9KXpWTO9jZ3SSnB-G52dLHUWZTSFOofL5zUFd4z37ByBxxG6WPLtbcszY94TmgrCmPtPuEIFhtINTY4yTFOKWfdMmGJ_8MDgXg\",\n            \"expirationTime\": 1708962980778\n        },\n        \"createdAt\": \"1708956425683\",\n        \"lastLoginAt\": \"1708959363217\",\n        \"apiKey\": \"AIzaSyAUnTmv5xA-lIUw3Tn1SEMTiu9wq98FEOI\",\n        \"appName\": \"[DEFAULT]\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get consent url",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"vikashk@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get consent url",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"vikashk@gmail.com\",\n    \"password\":\"vikash123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"google"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "334"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14e-Fdull80Vh76d+tcQE6YM7o056ag\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Feb 2024 17:52:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=1096148953479-dfn5ki98k0fj8dmppqhspsl8b0400tu2.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Ffir-authentication-137f9.firebaseapp.com%2F__%2Fauth%2Fhandler\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get google user with authorization code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\":\"4/0AeaYSHBHmSCiJpx6WE0SMEIVJ7HpD1yZ_xrx_Wmr_K6Nvn79fM451Tnx_P7QhkVOacP5lw\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/google-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"google-user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "send google auth code to get google user details",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"4/0AeaYSHBHmSCiJpx6WE0SMEIVJ7HpD1yZ_xrx_Wmr_K6Nvn79fM451Tnx_P7QhkVOacP5lw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/google-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"google-user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "297"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"129-kq2c/iVKIzk+hPQc5wS4mNegSq8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Feb 2024 17:59:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"type\": \"authorized_user\",\n        \"access_token\": \"ya29.a0AfB_byAZ3kmLs9zJEMSbbFi9xI6Im3LjQwiz2FyvoDADRLw8cbkpPLN2DPehU1T7-_o9mC9ztLZmQJXtvf4bLMgJxz_53LpEkNDxmKdcUfU1BQ1nvwFmRoeIzb3HYlj1y1rd7P1Ne-kjdEy1ptS64MlBVL2SEmMi-AaCgYKAXISARASFQHGX2Mi7XIVEzCCRHa8nCZ8AbzjoA0169\",\n        \"expiry_date\": 1708973909774\n    }\n}"
+				}
+			]
+		}
+	]
+}

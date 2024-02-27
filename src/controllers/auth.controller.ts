@@ -54,7 +54,8 @@ const firebaseConfig = {
   measurementId: "G-X64TMX924G",
 };
 
-// const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
  admin.initializeApp({
   credential: admin.credential.cert(JSON.parse(JSON.stringify(firebaseAdminConfig))),
 }) ;
@@ -74,7 +75,7 @@ const firebaseConfig = {
 export const register = async (req: Request, res: any) => {
   try {
     const { email = "", password = "" } = req.body;
-    const auth = getAuth();
+    const auth = getAuth(app);
     const user = await createUserWithEmailAndPassword(auth, email, password);
     return res.status(200).json({ data: user });
   } catch (error: any) {
@@ -103,15 +104,15 @@ export const register = async (req: Request, res: any) => {
 export const login = async (req: Request, res: any) => {
   try {
     const { email, password } = req.body;
-    const auth = getAuth();
+    const auth = getAuth(app);
     const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
       password
     );
-    addNewToken(req, res, userCredential);
-    const { access = "", refresh = "" } = res.locals;
-    return res.status(200).json({ data: userCredential, access, refresh });
+    // addNewToken(req, res, userCredential);
+    // const { access = "", refresh = "" } = res.locals;
+    return res.status(200).json({ data: userCredential });
   } catch (error) {
     console.error("error occoured to login user", error);
     return res.status(500).json({ error: "error occoured to login user" });
