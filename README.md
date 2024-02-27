@@ -1,6 +1,6 @@
 # firebase_authentication
 
-### Import postman collection firebase authentication to postman
+### Import postman collection -> firebase_authentication.postman_collection.json to postman
 
 ## Start app
 npm start
