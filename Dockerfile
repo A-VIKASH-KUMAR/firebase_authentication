@@ -1,8 +1,10 @@
-FROM node:slim
+FROM node:alpine
 
+WORKDIR /firebase-authentication
+RUN cd /firebase-authentication
 COPY . .
 
-RUN npm init -y&&npm install&&npm install --save-dev typescript
+RUN npm install&&npm install --save-dev typescript
 RUN npm run build
-RUN cd dist
-CMD node index.js
+EXPOSE 3001
+CMD node dist/index.js
