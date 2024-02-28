@@ -45,4 +45,4 @@ npm start
 - $ sudo docker images -a
 
 - Run the docker image with the following command
-- $ sudo docker run --network="host" <image-id>
+- $ sudo docker run --network="host" image-id
