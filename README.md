@@ -38,11 +38,11 @@ npm start
 ```
 
 ## To run using docker run the following commands
-- Create the docker image of the project with the following command
+### Create the docker image of the project with the following command
 - $ sudo docker build .
 
-- Get the list of docker images with the following command
+### Get the list of docker images with the following command
 - $ sudo docker images -a
 
-- Run the docker image with the following command
+### Run the docker image with the following command
 - $ sudo docker run --network="host" image-id
